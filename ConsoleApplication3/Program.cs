@@ -20,34 +20,14 @@ namespace ConsoleApplication3
         {
             using (var driver = new ChromeDriver())
             {
-                //driver.Navigate().GoToUrl("http://vitamins.ru/");
-                //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
-                //var butt = driver.FindElementByXPath("//*[@id=\"vishnya\"]/div[2]/a[1]");
-                //butt.Click();
-                //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
-                //var plus = driver.FindElementByXPath("/html/body/div[1]/div[1]/main/section/div/div[1]/div/div[1]/div[2]/div/div/i[2]");
-                //plus.Click();
-                //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
-                //butt = driver.FindElementByXPath("/html/body/div[1]/div[4]/div/div[3]/a");
-                //butt.Click();
-
-                //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
-                ////butt = driver.FindElement(By.XPath(("/html/body/div[2]/div/div/div/div[3]/div[1]/div[2]/div[2]/div/form/a")));
-
-                //butt = driver.FindElement(By.XPath(("/html/body/div[2]/div/div/div/div[3]/div[1]/div[2]/div[2]/div/form/a")));
-                ////driver.SwitchTo();
-                ////Console.WriteLine(butt.Text);
-                //butt.Click();
-
-                //Console.ReadKey();
+               
                 driver.Navigate().GoToUrl("https://eplaza.panasonic.ru/products/digital_av/av_accessories/head_phone/RP-TCM50E/");
                 driver.Manage().Window.Maximize();
                 var catalog = driver.FindElementByXPath("/html/body/div[1]/div/div/div/div[3]/div/div/div[2]/div[2]/div[2]/div[2]/table/tbody/tr/td[3]/div/div/span/span/a[1]");
                 catalog.Click();
                 catalog = driver.FindElementByXPath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[4]/a");
                 catalog.Click();
-               
-                
+                        
                 // driver.SwitchTo().Frame("cboxWrapper");
                 //string currentHandle = driver.CurrentWindowHandle;
                 catalog = driver.FindElementByXPath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/form/div[1]/div/div[1]/div[2]/div/a[2]");
@@ -66,13 +46,11 @@ namespace ConsoleApplication3
                 user.SendKeys("wensday@mail.ru");
                 var password = driver.FindElementByName("USER_PASSWORD");
                 password.SendKeys("rorshach1994");
-                //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
                 var login = driver.FindElementById("js_auth_button");
                 login.Click();
                 driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
                 var city = driver.FindElementByXPath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/form/div[1]/div/div[1]/div[2]/div[2]/div/a/span");
                 city.Click();
-                //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
                 Task.Delay(3000).Wait();
                 driver.SwitchTo().Window(driver.WindowHandles.ToList().Last());
                 city = driver.FindElementByXPath("/html/body/div[8]/div[1]/div[2]/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/ul/li[1]/a");
@@ -80,7 +58,6 @@ namespace ConsoleApplication3
                
                 //driver.SwitchTo().DefaultContent();
                 driver.SwitchTo().Window(driver.WindowHandles.ToList().First());
-                // driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(9));
                 Task.Delay(3000).Wait();
                 city = driver.FindElementByName("ORDER_PROP_5");
                 city.SendKeys("Тестовая");
@@ -88,7 +65,6 @@ namespace ConsoleApplication3
                 city.SendKeys("121212");
                 //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
                 Task.Delay(5000).Wait();
-                //city = driver.FindElementByXPath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/form/div[1]/div/div[9]/a");
                 city = driver.FindElementById("bonus-value");
                 city.SendKeys("1");
                 city = driver.FindElementByXPath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/form/div[1]/div/div[5]/div[2]/div[2]/a");
